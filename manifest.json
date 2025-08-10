@@ -12,26 +12,26 @@
   "categories": ["food", "restaurant", "lifestyle"],
   "icons": [
     {
-      "src": "image/logoFood.png",
+      "src": "image/LogoHungerFood.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "image/logoFood.png",
+      "src": "image/LogoHungerFood.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "image/logoFood.png",
+      "src": "image/LogoHungerFood.png",
       "sizes": "1024x1024",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "image/logoFood.png",
+      "src": "image/LogoHungerFood.png",
       "sizes": "1280x720",
-      "type": "image/jpeg",
+      "type": "image/png",
       "form_factor": "wide"
     }
   ]

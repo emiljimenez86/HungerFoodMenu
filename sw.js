@@ -1,11 +1,12 @@
-const CACHE_NAME = 'hunguer-food-v4';
+const CACHE_NAME = 'hunguer-food-v5';
 const urlsToCache = [
     './',
     './index.html',
     './styles.css',
     './script.js',
     './manifest.json',
-    './image/logoFood.png'
+    './image/logoFood.png',
+    './image/LogoHungerFood.png'
 ];
 
 // Install event

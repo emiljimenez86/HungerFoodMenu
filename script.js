@@ -16,8 +16,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 logo.style.border = '3px solid #d32f2f';
             });
             
+            // Change logo image to LogoHungerFood.png for PWA installation
+            const logoImages = document.querySelectorAll('.logo img, .category-header .logo img');
+            logoImages.forEach(img => {
+                if (img.src.includes('logoFood.png')) {
+                    img.src = './image/LogoHungerFood.png';
+                }
+            });
+            
             // Add a class for additional styling if needed
             document.body.classList.add('pwa-installed');
+        } else {
+            // Restore original logo and styling when PWA is not installed
+            const logos = document.querySelectorAll('.logo, .category-header .logo');
+            logos.forEach(logo => {
+                logo.style.background = '';
+                logo.style.border = '';
+            });
+            
+            // Restore original logo image
+            const logoImages = document.querySelectorAll('.logo img, .category-header .logo img');
+            logoImages.forEach(img => {
+                if (img.src.includes('LogoHungerFood.png')) {
+                    img.src = './image/logoFood.png';
+                }
+            });
+            
+            // Remove PWA class
+            document.body.classList.remove('pwa-installed');
         }
     }
     
@@ -27,13 +53,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Also listen for changes in display mode (when PWA is installed/uninstalled)
     if (window.matchMedia) {
         const mediaQuery = window.matchMedia('(display-mode: standalone)');
-        mediaQuery.addListener(detectPWAAndUpdateLogo);
+        const mediaQueryMinimal = window.matchMedia('(display-mode: minimal-ui)');
+        const mediaQueryFullscreen = window.matchMedia('(display-mode: fullscreen)');
+        
+        // Use modern addEventListener for newer browsers
+        if (mediaQuery.addEventListener) {
+            mediaQuery.addEventListener('change', detectPWAAndUpdateLogo);
+            mediaQueryMinimal.addEventListener('change', detectPWAAndUpdateLogo);
+            mediaQueryFullscreen.addEventListener('change', detectPWAAndUpdateLogo);
+        } else {
+            // Fallback for older browsers
+            mediaQuery.addListener(detectPWAAndUpdateLogo);
+            mediaQueryMinimal.addListener(detectPWAAndUpdateLogo);
+            mediaQueryFullscreen.addListener(detectPWAAndUpdateLogo);
+        }
     }
     
     // Additional PWA detection for iOS
     if (window.navigator.standalone !== undefined) {
         window.addEventListener('load', detectPWAAndUpdateLogo);
     }
+    
+    // Listen for PWA installation event
+    window.addEventListener('appinstalled', function() {
+        console.log('PWA was installed');
+        // Small delay to ensure the display mode has changed
+        setTimeout(detectPWAAndUpdateLogo, 100);
+    });
 
     // Get all category buttons and menu sections
     const categoryButtons = document.querySelectorAll('.category-btn');

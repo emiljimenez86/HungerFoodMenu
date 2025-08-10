@@ -2025,6 +2025,7 @@ body.pwa-installed .category-header .logo {
 }
 
 /* High-priority PWA logo styling - must be at the end to override other styles */
+/* This ensures the logo background is black and has a red border when PWA is installed */
 @media (display-mode: standalone),
        (display-mode: minimal-ui),
        (display-mode: fullscreen) {
