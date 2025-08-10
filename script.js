@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const logoImages = document.querySelectorAll('.logo img, .category-header .logo img');
             logoImages.forEach(img => {
                 if (img.src.includes('logoFood.png')) {
-                    img.src = './image/LogoFood.png';
+                    img.src = './image/logoFood.png';
                 }
             });
             
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Restore original logo image
             const logoImages = document.querySelectorAll('.logo img, .category-header .logo img');
             logoImages.forEach(img => {
-                if (img.src.includes('LogoHungerFood.png')) {
+                if (img.src.includes('logoFood.png')) {
                     img.src = './image/logoFood.png';
                 }
             });
