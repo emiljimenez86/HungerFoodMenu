@@ -932,6 +932,7 @@ body.pwa-installed .category-header .logo {
     .logo {
         width: 400px;
         height: 300px;
+        background: #000000 !important;
         border: 3px solid #d32f2f;
         border-radius: 20px;
         box-sizing: border-box;
@@ -1210,6 +1211,7 @@ body.pwa-installed .category-header .logo {
     .logo {
         width: 320px;
         height: 240px;
+        background: #000000 !important;
         border: 2px solid #d32f2f;
         border-radius: 18px;
         box-sizing: border-box;
@@ -1514,6 +1516,7 @@ body.pwa-installed .category-header .logo {
     .logo {
         width: 280px;
         height: 210px;
+        background: #000000 !important;
         border: 2px solid #d32f2f;
         border-radius: 15px;
         box-sizing: border-box;
@@ -1840,6 +1843,7 @@ body.pwa-installed .category-header .logo {
     .category-header .logo {
         width: 150px;
         height: 120px;
+        background: #000000 !important;
     }
     
     .category-header .brand-text h1 {
@@ -1866,6 +1870,7 @@ body.pwa-installed .category-header .logo {
     .category-header .logo {
         width: 120px;
         height: 100px;
+        background: #000000 !important;
     }
     
     .category-header .brand-text h1 {
