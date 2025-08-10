@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
                       window.navigator.standalone === true; // iOS Safari
         
         if (isPWA) {
-            // Apply black background to all logos
+            // Apply black background and red border to all logos
             const logos = document.querySelectorAll('.logo, .category-header .logo');
             logos.forEach(logo => {
                 logo.style.background = '#000000';
+                logo.style.border = '3px solid #d32f2f';
             });
             
             // Add a class for additional styling if needed
