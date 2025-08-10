@@ -1,5 +1,39 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // PWA Detection and Logo Background Change
+    function detectPWAAndUpdateLogo() {
+        // Check if the app is running in standalone mode (PWA installed)
+        const isPWA = window.matchMedia('(display-mode: standalone)').matches ||
+                      window.matchMedia('(display-mode: minimal-ui)').matches ||
+                      window.matchMedia('(display-mode: fullscreen)').matches ||
+                      window.navigator.standalone === true; // iOS Safari
+        
+        if (isPWA) {
+            // Apply black background to all logos
+            const logos = document.querySelectorAll('.logo, .category-header .logo');
+            logos.forEach(logo => {
+                logo.style.background = '#000000';
+            });
+            
+            // Add a class for additional styling if needed
+            document.body.classList.add('pwa-installed');
+        }
+    }
+    
+    // Run PWA detection immediately
+    detectPWAAndUpdateLogo();
+    
+    // Also listen for changes in display mode (when PWA is installed/uninstalled)
+    if (window.matchMedia) {
+        const mediaQuery = window.matchMedia('(display-mode: standalone)');
+        mediaQuery.addListener(detectPWAAndUpdateLogo);
+    }
+    
+    // Additional PWA detection for iOS
+    if (window.navigator.standalone !== undefined) {
+        window.addEventListener('load', detectPWAAndUpdateLogo);
+    }
+
     // Get all category buttons and menu sections
     const categoryButtons = document.querySelectorAll('.category-btn');
     const menuSections = document.querySelectorAll('.menu-section');

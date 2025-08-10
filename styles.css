@@ -13,6 +13,89 @@ body {
     overflow-x: hidden;
 }
 
+/* PWA-specific logo styling - Black background when installed */
+@media (display-mode: standalone) {
+    .logo {
+        background: #000000 !important;
+    }
+    
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
+/* PWA-specific logo styling for mobile when installed */
+@media (display-mode: standalone) and (max-width: 768px) {
+    .logo {
+        background: #000000 !important;
+    }
+    
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
+@media (display-mode: standalone) and (max-width: 480px) {
+    .logo {
+        background: #000000 !important;
+    }
+    
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
+@media (display-mode: standalone) and (max-width: 360px) {
+    .logo {
+        background: #000000 !important;
+    }
+    
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
+/* Alternative PWA detection for older browsers */
+@media (display-mode: minimal-ui) {
+    .logo {
+        background: #000000 !important;
+    }
+    
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
+@media (display-mode: fullscreen) {
+    .logo {
+        background: #000000 !important;
+    }
+    
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
+/* JavaScript-based PWA detection fallback */
+body.pwa-installed .logo {
+    background: #000000 !important;
+}
+
+body.pwa-installed .category-header .logo {
+    background: #000000 !important;
+}
+
+/* Additional PWA detection for iOS Safari */
+@media (display-mode: standalone), (display-mode: minimal-ui), (display-mode: fullscreen) {
+    .logo {
+        background: #000000 !important;
+    }
+    
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
 /* Install Banner */
 .install-banner {
     background: #ffeb3b;
@@ -1916,5 +1999,22 @@ body {
     
     .feature p {
         font-size: 0.9rem;
+        line-height: 1.5;
     }
+}
+
+/* High-priority PWA logo styling - must be at the end to override other styles */
+@media (display-mode: standalone),
+       (display-mode: minimal-ui),
+       (display-mode: fullscreen) {
+    .logo,
+    .category-header .logo {
+        background: #000000 !important;
+    }
+}
+
+/* JavaScript fallback for PWA detection */
+body.pwa-installed .logo,
+body.pwa-installed .category-header .logo {
+    background: #000000 !important;
 } 
