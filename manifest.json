@@ -1,0 +1,39 @@
+{
+  "name": "Hunguer FOOD",
+  "short_name": "Hunguer FOOD",
+  "description": "Menú digital de Hunguer FOOD",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "es",
+  "categories": ["food", "restaurant", "lifestyle"],
+  "icons": [
+    {
+      "src": "image/logoFood.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "image/logoFood.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "image/logoFood.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "image/logoFood.png",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}
+  
