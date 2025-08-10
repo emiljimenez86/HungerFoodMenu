@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const logoImages = document.querySelectorAll('.logo img, .category-header .logo img');
             logoImages.forEach(img => {
                 if (img.src.includes('logoFood.png')) {
-                    img.src = './image/LogoHungerFood.png';
+                    img.src = './image/LogoFood.png';
                 }
             });
             
