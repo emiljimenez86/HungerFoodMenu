@@ -5,6 +5,38 @@
     box-sizing: border-box;
 }
 
+/* Image optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Lazy loading for better performance */
+    loading: lazy;
+    /* Optimize rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Preload critical images */
+.logo-image {
+    /* Ensure logo loads quickly */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Menu item images optimization */
+.item-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.item-image img:hover {
+    transform: scale(1.05);
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #000000;
